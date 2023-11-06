@@ -1,0 +1,42 @@
+[
+    {
+      "id": 1,
+      "customer": "ИП Петров",
+      "product": "Станок токарный",
+      "count": 2, 
+      "status": "Новый",
+      "image": "stanok.jpg"
+    },
+    {
+      "id": 2,
+      "customer": "ООО Автоматика",  
+      "product": "Электродвигатель",
+      "count": 15,
+      "status": "В работе",
+      "image": "electrodvigatel.jpg"
+    },
+    {
+      "id": 3,   
+      "customer": "ЗАО Машиностроение",
+      "product": "Редуктор",
+      "count": 5,   
+      "status": "Готов", 
+      "image": "reduktor.jpg"
+    },
+    {
+      "id": 4,
+      "customer": "OOO Строительные материалы", 
+      "product": "Насос циркуляционный",
+      "count": 3,
+      "status": "Ожидает оплаты",
+      "image": "nasos.jpg"
+    },
+    {
+      "id": 5,
+      "customer": "ФГУП Атомэнергомаш",   
+      "product": "Корпус реактора",   
+      "count": 1,
+      "status": "Выполняется",
+      "image": "reactor.jpg"
+    }
+  ]
