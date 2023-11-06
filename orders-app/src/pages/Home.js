@@ -1,11 +1,9 @@
 import React, {useState} from 'react';
 import styles from '../styles/Home.moudule.css';
-import { useNavigate } from 'react-router-dom';
 
 
 const Home = () => {
 
-  const navigate = useNavigate();
 
   const [hovered, setHovered] = useState(false);
 
@@ -15,19 +13,13 @@ const Home = () => {
       <div className={styles.content}>
 
         <h1>Заголовок</h1>
-
-        <p>
-          Описание сайта 
-          <a href="#" onClick={() => navigate('/contacts')}>Подробнее</a>
-        </p>
-
-        <button 
+        <a 
+        href="/Contacts"
           onMouseEnter={() => setHovered(true)}
-          onMouseLeave={() => setHovered(false)}
+            onMouseLeave={() => setHovered(false)}
         >
           {hovered ? 'Узнать больше!' : 'Узнать больше'}
-        </button>
-
+          </a>
       </div>
 
     </div>
