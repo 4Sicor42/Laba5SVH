@@ -1,15 +1,14 @@
 import React from 'react';
+import styles from '../styles/Header.module.css';
 
 const Header = () => {
   return (
-    <header>
-      <h1>Заголовок приложения</h1>
+    <header className={styles.header}>
+      <h1 className={styles.logo}>Metal Core</h1>
       
       <nav>
-        <ul>
-          <li><a href="/">Главная</a></li> 
-          <li><a href="/orders">Заказы</a></li>
-        </ul>
+        <a href="/">Главная</a>
+        <a href="/orders">Заказы</a>
       </nav>
     </header>
   );
