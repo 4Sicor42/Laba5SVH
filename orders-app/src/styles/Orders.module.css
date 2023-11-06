@@ -1,0 +1,9 @@
+.orders {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .order {
+    padding: 20px;
+    border: 1px solid #ddd;
+  }
