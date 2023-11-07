@@ -1,10 +1,9 @@
 import React from 'react';
-import styles from '../styles/Orders.module.css';
-import stylesItem from '../styles/OrderItem.module.css';
+import ordersitem from '../styles/OrderItem.module.css';
 
 const Orders = ({orders}) => {
 return (
-<div className={styles.orders}>
+<div className={orders.orders}>
 <h2>Список заказов</h2>
 {orders.map(order => (
         <OrderItem key={order.id} order={order}/>  
@@ -16,12 +15,15 @@ return (
 const OrderItem = ({order}) => {
 
     return (
-      <div className={stylesItem.item}>
-        <h3>Поставщик : {order.customer}</h3>  
-        <p>Продукт: {order.product}</p>
-        <p>Количиство : {order.count}</p>
-        <p>Состояние : {order.status}</p>
-        <img src={require(`../../public/${order.image}.png`)} alt={order.product} />
+      <div className={ordersitem.item}>
+        <h3 className={ordersitem.h3}>Поставщик : {order.customer}</h3>  
+        <p className={ordersitem}>Продукт: {order.product}</p>
+        <p className={ordersitem}>Количиство : {order.count}</p>
+        <p className={ordersitem}>Состояние : {order.status}</p>
+        <div className={ordersitem.imageswrapper}>
+        <img className={ordersitem.imageswrapper} src={require(`../../public/${order.image}.png`)} alt={order.product} />
+        </div>
+        
       </div>
     )
   
