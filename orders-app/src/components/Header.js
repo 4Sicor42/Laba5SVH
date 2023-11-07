@@ -5,7 +5,6 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <h1 className={styles.logo}>Metal Core</h1>
-      
       <nav>
         <a href="/">Главная</a>
         <a href="/orders">Заказы</a>
