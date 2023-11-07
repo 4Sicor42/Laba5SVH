@@ -3,5 +3,58 @@
 }
 
 .item h3 {
+  text-align: center;
   margin-bottom: 5px;
+  padding: 10px 20px;  
+  border: none;
+  background-color: #6e6e6e;
+  color: rgb(222, 222, 222);
+  border-radius: 4px;  
+  box-shadow: 0px 5px 10px rgba(0,0,0,0.1);
+}
+
+.item h3:hover {
+    color: rgb(255, 255, 255);
+    transition: color 0.3s;
+    text-shadow: 1px 1px 1px #ccc;
+}
+
+.item p {
+  border-radius: 4px;  
+  margin: 10px 10;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px;
+  border: 1px solid #999;
+  text-align: center;
+  text-shadow: 2px 2px 1px rgba(0,0,0,0.1);
+  }
+
+.imageswrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    }
+
+.imageswrapper img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      margin: 10px;
+      border-radius: 4px;
+      box-shadow: 0px 1px 5px rgba(0,0,0,0.1);
+      transition: all 0.2s;
+      }
+.imageswrapper img:hover {
+  transform: scale(1.05);
+}
+
+.imageswrapper img:hover::after {
+  content: attr(alt);
+  position: absolute;
+  top: calc(100% + 5px);
+  left: 0;
+  padding: 5px 10px;
+  background: #333;
+  color: #fff;
 }
