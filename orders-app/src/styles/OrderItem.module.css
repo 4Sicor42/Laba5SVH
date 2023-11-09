@@ -1,5 +1,7 @@
 .item {
   margin-bottom: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .item h3 {
@@ -14,12 +16,14 @@
 }
 
 .item h3:hover {
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     transition: color 0.3s;
-    text-shadow: 1px 1px 1px #ccc;
+    text-shadow: 1px 1px 1px #696969;
+    cursor:pointer;
 }
 
 .item p {
+  cursor:default;
   border-radius: 4px;  
   margin: 10px 10;
   margin-left: auto;

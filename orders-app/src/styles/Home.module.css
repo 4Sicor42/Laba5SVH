@@ -3,6 +3,7 @@
   min-height: 80vh;
   color: #fff;
   background-color: #555;
+  pointer-events: none;
 }
 
 .content {
@@ -33,6 +34,7 @@
  }
 
 .content a {
+  pointer-events: painted;
   padding-bottom: 10px;
   text-decoration:none;
   padding: 10px 20px;

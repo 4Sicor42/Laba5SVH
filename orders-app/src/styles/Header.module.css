@@ -8,6 +8,7 @@
   }
   
   .logo {
+    pointer-events: none;
     font-size: 1.5em;
     color: #fff;
   }
