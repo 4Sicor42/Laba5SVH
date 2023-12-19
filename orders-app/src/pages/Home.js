@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
 import styles from '../styles/Home.module.css';
-
+import LinkButton from '../components/LinkButton';
 
 const Home = () => {
   const [hovered, setHovered] = useState(false);
   return (
+    
     <div className={styles.home}>
       
       <div className={styles.content}>
@@ -30,13 +31,7 @@ const Home = () => {
         <h3>Заинтересовались? жмите на кнопку ниже, для получения информации</h3>
         </div>
         <div>
-        <a 
-        href="/Contacts"
-          onMouseEnter={() => setHovered(true)}
-            onMouseLeave={() => setHovered(false)}
-        >
-          {hovered ? 'Узнать больше!' : 'Узнать больше'}
-          </a>
+        <LinkButton hovered={hovered} setHovered={setHovered} />
         </div>
       </div>
 
