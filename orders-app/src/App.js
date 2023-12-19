@@ -11,29 +11,35 @@ import Footer from './components/Footer';
 import Contacts from './pages/Contacts';
 import Home from './pages/Home';
 import Orders from './pages/Orders';
-import Modal from './pages/Modal';
+import NotFound from './pages/NotFound'
 
+import { ThemeProvider, CssBaseline } from "@mui/material";
+import theme from "./theme";
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
 
 
 function App() {
   const [orders] = useState(data);
 
   return (
-    <Router>
-      <Header />
-      
-      <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/orders" element={<Orders orders={orders} /> } />
-          <Route path="/contacts" element={<Contacts />} />
-        </Routes>
-      </main>
-
-      <Modal />
-
-      <Footer />
-    </Router>
+        <Router>
+          <ThemeProvider theme={theme}>
+            <CssBaseline enableColorScheme />
+             <Header />
+              <main>
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/orders" element={<Orders orders={orders} /> } />
+                  <Route path="/contacts" element={<Contacts />} />
+                  <Route path='*' element={<NotFound/>} />
+                </Routes>
+              </main>
+            </ThemeProvider>
+          <Footer />
+        </Router>
   );
 }
 

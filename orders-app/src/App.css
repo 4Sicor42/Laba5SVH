@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@1,300&display=swap');
+
 body {
     font-family: 'Ubuntu', sans-serif;
     font-size: 14px;
     margin: auto;
     padding: auto;
+    background: linear-gradient(to bottom, #fff, #969696);
   }
