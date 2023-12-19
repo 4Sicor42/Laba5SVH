@@ -3,6 +3,10 @@ import styles from '../styles/OrderForm.module.css';
 import OrderImage from '../components/OrderImage'
 import OrderSucces from '../components/OrderSucces.js';
 
+import InputLabel from '@mui/material/InputLabel';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+
 const OrderForm = ({ order }) => {
 
 const [name, setName] = useState('');
@@ -60,56 +64,61 @@ return (
       <p>Цена: {order.price}</p>
       </div>
         <div className={styles.details}>
-        <div >
-          <label htmlFor="name">Имя</label>
-          <input 
-            type="text" 
-            id="name"
-            value={name}
-            onChange={handleNameChange}
-            required
-          />
+        <div className={styles.field}>
+        <TextField
+          required
+          label="Имя"
+          type="text" 
+          id="name"
+          value={name}
+          onChange={handleNameChange}
+        />
         </div>
       
-        <div > 
-        <label htmlFor="lastname">Фамилия</label> 
-        <input type="text" 
-              id="lastname" 
-              value={lastname} 
-              onChange={handleLastNameChange} 
-              required /> 
+        <div className={styles.field}> 
+        <TextField
+          label="Фамилия"
+          type="text" 
+          id="lastname" 
+          value={lastname} 
+          onChange={handleLastNameChange} 
+          required 
+        />
           </div>
       
-        <div >  
-          <label htmlFor="email">Email</label>
-          <input
-            type="email" 
+        <div className={styles.field}>  
+        <TextField
+          label="Email"
+          type="email" 
             id="email"
             value={email}
-            onChange={handleEmailChange} 
-            required
-          />
+          onChange={handleEmailChange} 
+          required 
+        />
         </div>
-        <div > 
-        <label htmlFor="phone">Телефон</label> 
-        <input type="tel" 
-          id="phone" 
-          value={phone} 
+        <div className={styles.field}> 
+        <TextField
+          label="Телефон"
+          type="tel" 
+          id="phone"
+          value={phone}
           onChange={handlePhoneChange} 
-          required /> 
+          required 
+        />
         </div>
       
         <div className={styles.count}> 
-        <label htmlFor="count">Количество</label> 
-        <select id="count" value={count} onChange={handleCountChange}> { [...Array(order.count).keys()].map(x => <option key={x+1}>{x+1}</option> ) } </select>
-        </div>
-      
         
-        <button type="submit" className={styles.submit}>
-          Оформить заказ
-        </button>
+        <InputLabel id="demo-simple-select-standard-label">Количество</InputLabel>
+        <select id="count" value={count} onChange={handleCountChange}> { [...Array(order.count).keys()].map(x => <option key={x+1}>{x+1}</option> ) } </select>
+        </div >
+        <div className={styles.submit}>
+        <Button color="Ash" size="small"  variant="contained" type="submit" >Оформить заказ</Button>
+        </div>
         </div>
       </form>
+
+      
     )}
 
 {isSent && (

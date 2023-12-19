@@ -1,5 +1,7 @@
 import styles from '../styles/OrderSucces.module.css';
 import { useState } from 'react';
+import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
+import Button from '@mui/material/Button';
 
 function OrderSuccess() {
 
@@ -14,17 +16,17 @@ function OrderSuccess() {
   return (
     <div className={styles.popup}>
       <div className={styles.popupinner}>
-        
-        <h3>Заказ на покупку  принят!</h3>
-
+       
+        <h3>Заказ на покупку  принят! < CheckCircleOutlineIcon/></h3>
+      
         <p>Спасибо, Ваш заказ принят. С Вами скоро свяжутся.</p>
 
-        <button
-          className={styles.closebtn}
-          onClick={handleClose}
-        >
-          Закрыть
-        </button>
+        <Button 
+        color="Charcoal" 
+        size="small"  
+        variant="contained"
+        className={styles.closebtn}
+        onClick={handleClose} >Закрыть</Button>
 
       </div>
     </div>

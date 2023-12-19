@@ -2,9 +2,11 @@ import React from 'react';
  
 import styles from '../styles/Contacts.module.css';
 
-
-
 import Reviews from '../components/Reviews';
+
+import ContactMailOutlinedIcon from '@mui/icons-material/ContactMailOutlined';
+import CallOutlinedIcon from '@mui/icons-material/CallOutlined';
+import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 
 const Contacts = () => {
   return (
@@ -16,21 +18,21 @@ const Contacts = () => {
 
   <div className={styles.info}>
 
-    <h3>Адрес</h3>
+    <h3>Адрес <ContactMailOutlinedIcon/></h3>
     <p>г. Москва, ул. Садовая, д.5</p>
 
   </div>
 
   <div className={styles.info}>
 
-    <h3>Телефон</h3> 
+    <h3>Телефон <CallOutlinedIcon/></h3> 
     <p>+7 (495) 123-45-67</p>
 
   </div>
 
   <div className={styles.info}>
 
-    <h3>Email</h3>
+    <h3>Email <EmailOutlinedIcon/></h3>
     <p>info@company.ru</p>
 
   </div>
