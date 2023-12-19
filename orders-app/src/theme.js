@@ -14,6 +14,49 @@ let theme = createTheme({
       main: "#112211",
       contrastText: "#fff",
     },
+
+    Steel: {
+      main: '#343B46',
+      light: '#606B79',
+      dark: '#21272C',
+      contrastText: '#F5F5F5',
+      },
+      
+      Concrete: {
+      main: '#414D59',
+      light: '#6B778E',
+      dark: '#292E33',
+      contrastText: '#fff',
+      },
+      
+      
+      Slate: {
+      main: '#374257',
+      light: '#64748B',
+      dark: '#253039',
+      contrastText: '#eaecef',
+      },
+      
+      Ash: {
+      main: '#283B50',
+      light: '#557696',
+      dark: '#1B2E40',
+      contrastText: '#e1e5eb',
+      },
+      
+      Charcoal: {
+      main: '#2F3842',
+      light: '#596376',
+      dark: '#191E23',
+      contrastText: '#d1d5da',
+      },
+      
+      Graphite: {
+      main: '#2C353F',
+      light: '#4B5969',
+      dark: '#212B34',
+      contrastText: '#ced3d9'
+      }
   },
   typography: {
     fontFamily: ["Montserrat", "sans-serif"].join(","),

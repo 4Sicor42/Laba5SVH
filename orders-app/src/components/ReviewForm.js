@@ -2,6 +2,9 @@ import { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import style from '../styles/ReviewMain.module.css'
 
+import SendIcon from '@mui/icons-material/Send';
+import Button from '@mui/material/Button';
+
 const ReviewForm = ({addReview}) => {
 
     const [review, setReview] = useState({
@@ -44,8 +47,9 @@ const ReviewForm = ({addReview}) => {
         </div>
       </div>
   </div> 
-
-    <button type="submit">Отправить</button>
+  <Button type="submit" variant="contained" endIcon={<SendIcon />}>
+  Отправить
+</Button>
       
 </form>
       

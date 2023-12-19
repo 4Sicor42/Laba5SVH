@@ -14,6 +14,10 @@
     object-fit: cover;
     margin-right: 20px;
   }
+
+  .ava{
+    padding-left: 1em;
+  }
   
   .text {
     flex: 1;
