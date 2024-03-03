@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import './App.css';
 
-import data from './mock-data.json';
+import { loadOrders } from './Redux/actions/load';
+import { useDispatch, useSelector } from 'react-redux';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -22,7 +23,12 @@ import '@fontsource/roboto/700.css';
 
 
 function App() {
-  const [orders] = useState(data);
+  const dispatch = useDispatch();
+  const orders = useSelector(state => state.orders);
+
+  useEffect(() => {
+    dispatch(loadOrders()); 
+  }, [dispatch]);
 
   return (
         <Router>

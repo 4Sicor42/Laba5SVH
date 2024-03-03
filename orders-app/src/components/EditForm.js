@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { updateOrderAction } from '../Redux/actions.js';
+import {useDispatch } from 'react-redux';
+import { updateOrderAction } from '../Redux/actions/update';
 
 const EditForm = ({order}) => {
 
