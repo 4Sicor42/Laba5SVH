@@ -11,11 +11,14 @@ const User = sequelize.define('user', {
     },
     email: {
       type: DataTypes.STRING
+    },
+    password :{
+      type: DataTypes.STRING
     }
   });
   
 
-  const Order = sequelize.define('order', {
+  const Orders = sequelize.define('Orders', {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true
@@ -48,7 +51,7 @@ const User = sequelize.define('user', {
   });
   
 
-  const OrderHistory = sequelize.define('order_history', {
+  const OrdersHistory = sequelize.define('Orders_history', {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true
@@ -60,28 +63,28 @@ const User = sequelize.define('user', {
         key: 'id'
       }
     },
-    orderId: {
+    OrdersId: {
       type: DataTypes.INTEGER,
       references: {
-        model: Order,
+        model: Orders,
         key: 'id'
       }
     }
   });
   
   // Устанавливаем связи между моделями
-  User.hasMany(Order, { foreignKey: 'customerId' });
-  Order.belongsTo(User, { foreignKey: 'customerId' });
-  User.hasMany(OrderHistory, { foreignKey: 'userId' });
-  Order.hasMany(OrderHistory, { foreignKey: 'orderId' });
-  OrderHistory.belongsTo(User, { foreignKey: 'userId' });
-  OrderHistory.belongsTo(Order, { foreignKey: 'orderId' });
+  User.hasMany(Orders, { foreignKey: 'customerId' });
+  Orders.belongsTo(User, { foreignKey: 'customerId' });
+  User.hasMany(OrdersHistory, { foreignKey: 'userId' });
+  Orders.hasMany(OrdersHistory, { foreignKey: 'OrdersId' });
+  OrdersHistory.belongsTo(User, { foreignKey: 'userId' });
+  OrdersHistory.belongsTo(Orders, { foreignKey: 'OrdersId' });
   
   // Синхронизация моделей с базой данных
   sequelize.sync();
 
 module.exports = {
     User,
-    Order,
-    OrderHistory
+    Orders,
+    OrdersHistory
 };
