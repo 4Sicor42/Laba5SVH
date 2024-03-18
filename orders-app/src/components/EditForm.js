@@ -1,13 +1,19 @@
 import { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { updateOrderAction } from '../Redux/actions.js';
+import {useDispatch } from 'react-redux';
+import { updateOrderAction } from '../Redux/actions/update';
+
+import TextField from '@mui/material/TextField';
 
 const EditForm = ({order}) => {
 
   const [formData, setFormData] = useState({
     product: order.product,
     count: order.count,
-    // и другие поля
+    customer: order.customer,
+    status: order.status,
+    price: order.price,
+    image: order.image,
+    additionalInfo: order.additionalInfo
   });
 
   const handleChange = (e) => {
@@ -29,25 +35,77 @@ const EditForm = ({order}) => {
       
       <label>
         Продукт:
-        <input 
+        <TextField
+          label="Multiline"
           type="text"
-          name="product"
+          name="product" 
           value={formData.product}
+          onChange={handleChange}
+        />
+      </label>
+
+      <label>
+        Количество:
+        <TextField
+          type="number"  
+          name="count"
+          value={formData.count}
+          onChange={handleChange} 
+        />
+
+      </label>
+
+      <label>
+        Заказчик:
+        <TextField
+          type="text"
+          name="customer"
+          value={formData.customer} 
           onChange={handleChange} 
         />
       </label>
 
       <label>
-        Количество: 
-        <input
-          type="number" 
-          name="count"
-          value={formData.count}
+        Статус:
+        <TextField
+          type="text"
+          name="status"
+          value={formData.status}
           onChange={handleChange}
-        />  
+        />
+
       </label>
 
-      // остальные поля
+      <label>
+        Цена:
+        <TextField
+          type="number"
+          name="price"
+          value={formData.price}
+          onChange={handleChange} 
+        />
+      </label>
+
+      <label>
+        Изображение:
+        <TextField
+          type="text" 
+          name="image"
+          value={formData.image}
+          onChange={handleChange}
+        />
+      </label>
+
+      <label>
+        Дополнительная информация:
+        <TextField
+          name="additionalInfo"
+          value={formData.additionalInfo}
+          onChange={handleChange}  
+          multiline
+          maxRows={4}
+        />
+      </label>
 
       <button type="submit">Сохранить</button>
 

@@ -1,10 +1,11 @@
-import { LOAD_ORDERS, UPDATE_ORDER } from '../Redux/actions';
+import { LOAD_ORDERS} from '../Redux/actions/load';
+import { UPDATE_ORDER} from '../Redux/actions/update';
 
 const initialState = {
   orders: []
 };
 
-export default function(state = initialState, action) {
+export default function reducer (state = initialState, action) {
   switch(action.type) {
     case LOAD_ORDERS: 
       return { ...state, orders: action.payload };
